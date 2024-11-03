@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portofolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container nav">
+            <h1 class="logo">My Portofolio</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#Portofolio">Portofolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>Saya Muhamad Fatihul Akbar, mahasiswa semester 6 program studi Manajemen Informatika 
+                Politeknik Negeri Sriwijaya angkatan tahun 2021, yang bersemangat untuk belajar dan 
+                mengembangkan keterampilan di dunia teknologi informasi.</p>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <h2 class="section-title">Kemampuan &Pengalaman</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item fade-in">
+            
+                    <h3>Kemampuan</h3>
+                    <p>▪ Microsoft Office 
+                        ▪ VS Code  
+                        ▪ Canva 
+                        ▪ Figma</p>
+                </div>
+                <div class="portfolio-item fade-in">
+                    <h3>Pengalaman Magang</h3>
+                    <img src="Fatihul.jpg" alt="Project 2">
+                    <p>Dinas Komunikasi Dan Informatika Provinsi Sumatera Selatan 
+                        (21 Februari 2024- 14 Juni 2024) 
+                        Dinas komunikasi dan Informatika Provinsi Sumatera Selatan bertanggung jawab atas 
+                        pengembangan dan implementasi kebijakan dibidang komunikasi dan teknologi informasi 
+                        disuatu wilayah 
+                        Saya di Diskominfo belajar tentang implementasi layanan publik digital ,keamanan informasi 
+                        dalam konteks layanan publik online dan evaluasi efektivitas e-government,ini termasuk 
+                        tentang kebutuhan dan harapan masyarakat terhadap layanan e-government serta strategi 
+                        untuk meningkatkan aksesibilitas dan kualitas layanan .</p>
+                </div>
+                <!-- Add more projects as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <p>If you'd like to collaborate or just want to say hello, feel free to reach out!</p>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+</body>
+<script>
+    const fadeInElements = document.querySelectorAll('.fade-in');
+
+    const options = {
+        threshold: 0.5,
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, options);
+
+    fadeInElements.forEach(element => {
+        observer.observe(element);
+    });
+</script>
+</html>
